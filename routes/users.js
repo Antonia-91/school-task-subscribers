@@ -62,5 +62,23 @@ router.get("/:id", (req, res) => {
 });
 
 //PUT receives subscriber info from frontend, makes changes in database
+router.put("/update/:id", (req, res) => {
+  if (JSON.stringify(req.body) === "{}") {
+    res
+      .status(400)
+      .send({ message: "Update request for updating user cannot be empty" });
+    return;
+  }
+  //ASYNC
+  User.findByIdAndUpdate(req.params.id, req.body)
+    .then((user) => {
+      if (!user) {
+        res.status(404).json({ failed: "Empty Directory" });
+      } else {
+        res.status(200).send(user);
+      }
+    })
+    .catch((err) => res.status(500).send({ message: "Error occured: " + err }));
+});
 
 //POST logs in user, user sends json (username, password)
