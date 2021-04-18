@@ -5,6 +5,7 @@ const User = require("../model/user");
 
 // /* GET users listing. */
 // router.get("/", function (req, res, next) {
+
 //   res.send("HELLO FRoM USER");
 // });
 
@@ -24,8 +25,6 @@ router.get("/", (req, res) => {
 
 //POST: creates user, saves to database, returns created user
 router.post("/", (req, res) => {
-  //If req.body is empty it will return "{}", convert req.body to String and compare to another String => "{}"
-
   if (JSON.stringify(req.body) === "{}") {
     res
       .status(400)
@@ -48,3 +47,9 @@ router.post("/", (req, res) => {
 });
 
 module.exports = router;
+
+//GET: retuns user by id
+
+//PUT receives subscriber info from frontend, makes changes in database
+
+//POST logs in user, user sends json (username, password)
