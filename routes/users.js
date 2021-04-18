@@ -1,5 +1,7 @@
 var express = require("express");
 var router = express.Router();
+var bcrypt = require("bcrypt"); // passwordEncryption
+const saltRounds = 10;
 
 const User = require("../model/user");
 
@@ -36,7 +38,7 @@ router.post("/", (req, res) => {
     lastName: req.body.lastName,
     userName: req.body.userName,
     email: req.body.email,
-    password: req.body.password,
+    password: passwordEncryption(req.body.password),
     subscribed: req.body.subscribed,
   });
 
@@ -82,3 +84,10 @@ router.put("/update/:id", (req, res) => {
 });
 
 //POST logs in user, user sends json (username, password)
+
+// function  Encryptionise a password
+function passwordEncryption(pass) {
+  const salt = bcrypt.genSaltSync(saltRounds);
+  const hash = bcrypt.hashSync(pass, salt);
+  return hash;
+}
