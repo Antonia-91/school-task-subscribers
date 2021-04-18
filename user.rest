@@ -1,0 +1,15 @@
+GET http://localhost:3037/users
+
+###
+
+POST http://localhost:3037/users/
+Content-Type: application/json
+
+  {
+   "fName": "Anna",
+    "lastName": "Andersson",
+    "userName": "Anna Andersson",
+    "email": "Andersson@gmail.com",
+    "password": "Anna123",
+    "admin": false
+  }
