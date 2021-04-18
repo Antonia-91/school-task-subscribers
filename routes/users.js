@@ -84,6 +84,30 @@ router.put("/update/:id", (req, res) => {
 });
 
 //POST logs in user, user sends json (username, password)
+router.post("/login", (req, res) => {
+  const { userName, password } = req.body;
+  User.find() //returns all entries (users)
+    .then((users) => {
+      if (users.length === 0) {
+        res
+          .status(404)
+          .json({ failed: "Empty Directory on path: " + req.path });
+      } else {
+        let foundUser = users.filter(
+          (user) =>
+            user.userName === userName &&
+            bcrypt.compareSync(password, user.password)
+        );
+        console.log(foundUser);
+
+        res.json({
+          isUserFound: foundUser.length === 0 ? false : true,
+          userLoggedIn: foundUser,
+        });
+      }
+    })
+    .catch((err) => res.json({ failed: `${err}` }));
+});
 
 // function  Encryptionise a password
 function passwordEncryption(pass) {
