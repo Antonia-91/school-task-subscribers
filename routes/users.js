@@ -49,6 +49,17 @@ router.post("/", (req, res) => {
 module.exports = router;
 
 //GET: retuns user by id
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then((user) => {
+      if (!user) {
+        res.status(404).json({ failed: "Empty Directory" });
+      } else {
+        res.status(200).json(user);
+      }
+    })
+    .catch((err) => console.log(err));
+});
 
 //PUT receives subscriber info from frontend, makes changes in database
 
