@@ -6,11 +6,11 @@ POST http://localhost:3037/users/
 Content-Type: application/json
 
   {
-    "fName": "Kalle",
-    "lastName": "Anka",
-    "userName": "Kallis",
-    "email": "ankan@gmail.com",
-    "password": "123"
+    "fName": "Admin",
+    "lastName": "Admin",
+    "userName": "Admin",
+    "email": "Admin@gmail.com",
+    "password": "Admin"
   }
 
 
@@ -22,6 +22,6 @@ POST http://localhost:3037/users/login/
 Content-Type: application/json
 
   {
-    "userName": "LuPe",
-    "password": "123"
+    "userName": "Admin",
+    "password": "Admin"
   }

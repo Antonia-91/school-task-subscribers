@@ -86,6 +86,8 @@ router.put("/update/:id", (req, res) => {
 //POST logs in user, user sends json (username, password)
 router.post("/login", (req, res) => {
   const { userName, password } = req.body;
+  console.log(req.params.id);
+  console.log(req.body);
   User.find() //returns all entries (users)
     .then((users) => {
       if (users.length === 0) {
