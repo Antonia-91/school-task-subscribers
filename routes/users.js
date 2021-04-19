@@ -72,7 +72,7 @@ router.put("/update/:id", (req, res) => {
     return;
   }
   //ASYNC
-  User.findByIdAndUpdate(req.params.id, req.body)
+  User.findByIdAndUpdate(req.params.id, req.body, { useFindAndModify: false })
     .then((user) => {
       if (!user) {
         res.status(404).json({ failed: "Empty Directory" });
