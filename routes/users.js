@@ -32,7 +32,7 @@ router.post("/", (req, res) => {
       .status(400)
       .send({ message: "Post request for creating user cannot be empty" });
     return;
-  }
+  } // else
   let userCreated = new User({
     fName: req.body.fName,
     lastName: req.body.lastName,
