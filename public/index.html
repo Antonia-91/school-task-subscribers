@@ -1,13 +1,39 @@
 <html>
+  <head>
+    <title>admin login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <div class="main-content" id="home-div">
+      <div class="login-wrapper" id="login-div">
+        <form action="" class="form">
+          <h2>Admin login</h2>
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+          <div class="input-group">
+            <input type="text" name="userName" id="userName" required />
+            <label for="userName">User Name</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              name="loginPassword"
+              id="loginPassword"
+              required
+            />
+            <label for="loginPassword">Password</label>
+          </div>
 
+          <input
+            type="button"
+            value="Login"
+            class="submit-btn"
+            id="submit-login"
+          />
+          <a href="#forgot-pw" class="forgot-pw">Forgot Password?</a>
+        </form>
+      </div>
+    </div>
+    <script src="javascripts/admin.js"></script>
+  </body>
 </html>
