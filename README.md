@@ -4,6 +4,11 @@
 
 I detta repot finner du applikationens Backend, min server är deployad på Heruko och min Databasen är lagrad på MongoDB Atlas.
 
+## Endpoints
+
+Länk till backend live: https://awesome-pictures.herokuapp.com/
+Använd: userName: Admin & password : Admin
+
 ## FrontEnd repo
 
 Länk till Applicationens Frontend : https://github.com/Antonia-91/school-task-subscribers-FrontEnd.git
