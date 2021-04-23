@@ -4,9 +4,8 @@
 
 I detta repot finner du applikationens Backend, min server är deployad på Heruko och min Databasen är lagrad på MongoDB Atlas.
 
-## Endpoints
+### Länk till backend live:
 
-Länk till backend live:
 https://awesome-pictures.herokuapp.com/
 https://awesome-pictures.herokuapp.com/users
 
@@ -30,10 +29,10 @@ Administrationsgränssnittet för Admin
 
 ### Installation
 
-$ git clone https://example.com
-$ cd ../path/to/the/file
-$ npm install
-$ npm run devStart
+-$ git clone https://example.com
+-$ cd ../path/to/the/file
+-$ npm install
+-$ npm run devStart
 
 ### Teknologi
 
