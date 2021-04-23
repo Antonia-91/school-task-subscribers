@@ -16,8 +16,7 @@ function subscriberInfo() {
   console.log("subscribers");
 }
 
-// ---- EndPoint call -----  ///
-
+//--------------  EndPoint call --------------- //
 function getAdminInfo(admininfo) {
   fetch("https://awesome-pictures.herokuapp.com/users/login", {
     method: "POST",
@@ -45,21 +44,39 @@ function getUsers() {
     .catch((err) => console.log(err));
 }
 
+//--------------  GLOBAL EVENTLISTENERS --------------- //
+window.addEventListener("click", (e) => {
+  if (e.target.matches("#submit-logOut")) {
+    printLoginForm();
+  }
+});
+
+//--------------  DOM functions --------------- //
 function printAdminInfo(users) {
   document.querySelector(".main-content").innerHTML = "";
+
+  let newArray = users.map((user) => {
+    return user.email;
+  });
+  console.log(newArray);
+  let output = newArray.join(" ");
+  console.log(output);
 
   let listTamplate = `
           <div class="login-wrapper">
           <div class="admin form">
             <div>
               <h1>Admin</h1>
-              <p>subscribers</p>
+              <p>SUBSCRIBERS  = <i class="fa fa-check-circle" aria-hidden="true"></i></p>
             </div>
             <div>
               <ul class="subscribers">
               ${users.map((user) => {
-                console.log(user.email);
-                return ` <li>${user.email}</li> `;
+                return `<li>${user.email} ${
+                  user.subscribed
+                    ? `<i class="fa fa-check-circle" aria-hidden="true"></i>`
+                    : ""
+                }</li>`;
               })}
               </ul>
               <input
@@ -68,6 +85,7 @@ function printAdminInfo(users) {
             class="submit-btn"
             id="submit-logOut"
           />
+         
             
         </div>
           `;
@@ -76,12 +94,11 @@ function printAdminInfo(users) {
     .querySelector(".main-content")
     .insertAdjacentHTML("beforeend", listTamplate);
 }
-//--------------  GLOBAL EVENTLISTENERS --------------- //
-window.addEventListener("click", (e) => {
-  if (e.target.matches("#submit-logOut")) {
-    printLoginForm();
-  }
-});
+
+// ${users.map((user) => {
+//   console.log(user.email);
+//   return ` <li>${user.email}</li> `;
+// })}
 
 function printLoginForm() {
   document.querySelector(".main-content").innerHTML = "";

@@ -6,7 +6,10 @@ I detta repot finner du applikationens Backend, min server är deployad på Heru
 
 ## Endpoints
 
-Länk till backend live: https://awesome-pictures.herokuapp.com/
+Länk till backend live:
+https://awesome-pictures.herokuapp.com/
+https://awesome-pictures.herokuapp.com/users
+
 Använd: userName: Admin & password : Admin
 
 ## FrontEnd repo
@@ -22,7 +25,7 @@ POST: en Ny användare
 POST: vilken användare som loggar in
 PUT: en uppdatering av en användare
 
-En funktion som kryptonicerar lösenord
+En funktion som kryptonicerar lösenord.
 Administrationsgränssnittet för Admin
 
 ### Installation
