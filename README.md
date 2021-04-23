@@ -29,10 +29,10 @@ Administrationsgränssnittet för Admin
 
 ### Installation
 
--$ git clone https://example.com
--$ cd ../path/to/the/file
--$ npm install
--$ npm run devStart
+git clone https://example.com.
+cd ../path/to/the/file.
+npm install.
+npm run devStart.
 
 ### Teknologi
 
